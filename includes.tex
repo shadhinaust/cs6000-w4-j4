@@ -1,0 +1,102 @@
+\documentclass[11pt, letterpaper]{article}
+\usepackage{cite}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage[numbers,sort&compress]{natbib}
+\UseRawInputEncoding
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[margin=1in,letterpaper]{geometry}
+\usepackage{ragged2e,setspace,graphicx,lipsum,xcolor,titling,float,titlesec,subcaption,expex}
+\usepackage{marvosym,tabularray}
+\usepackage{xurl}
+
+\usepackage{tipa}
+%\DeclareFontSubstitution{T3}{ptm}{el}{n}
+\graphicspath{ {figures/} }
+\linespread{1} %1 = single, 1.3= 1.5 spacing, 1.6 = double
+
+\usepackage{times}
+\frenchspacing
+
+%\let\Cross\relax
+%\usepackage{bbding}
+
+%headers 
+\usepackage{fancyhdr}
+\setlength{\headheight}{13.6pt} % needs to be above 13.6 to work right
+\pagestyle{fancy}
+\newcommand{\changefont}{ \fontsize{9}{11} \sffamily \selectfont}
+\fancyhead{}
+\fancyhead[L]{\changefont \textit{Learning \& Story}, \today}
+\fancyhead[R]{\changefont CS6000 Computer Science Research}
+ 
+\usepackage{multicol}
+\setlength{\columnsep}{0cm}
+
+% defines "abstract" environment
+\renewenvironment{abstract}{%
+\noindent\begin{minipage}{1\textwidth}
+\setlength{\leftskip}{0.38in}
+\setlength{\rightskip}{0.38in}}
+{\end{minipage}}
+
+% define keyword
+\newcommand{\keyword}{\vskip 6pt \par \small \itshape Keywords: }
+
+% define header environment
+\renewenvironment{top}{%
+\noindent\begin{minipage}{1\textwidth}
+\setlength{\leftskip}{0in}
+\setlength{\rightskip}{0in}}
+{\end{minipage}}
+
+% caption formatting
+\captionsetup[figure]{font={sf, small} }
+\captionsetup[table]{font={sf, small} }
+
+% section headings
+\titleformat*{\section}{\normalsize \sffamily \bfseries}
+\titleformat*{\subsection}{\normalsize \sffamily}
+\titleformat*{\subsubsection}{\normalsize  \sffamily  \itshape}
+\titleformat*{\paragraph}{\normalsize \bfseries}
+\titleformat*{\subparagraph}{\normalsize \bfseries}
+
+%{indent}{linebefore}{lineafter} 
+%need stars to surpress "indent first line"
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+\titlespacing*{\subsection}{0pt}{12pt}{6pt}
+\titlespacing*{\subsubsection}{0pt}{12pt}{6pt}
+
+%title page and author info
+\pretitle{
+\vskip 20pt 
+\raggedleft
+\huge 
+\sffamily}
+\posttitle{}
+\preauthor{
+\vskip 17pt
+\raggedleft
+\large 
+\sffamily}
+\postauthor{}
+\predate{
+\vskip 5pt
+\raggedleft
+\small 
+\sffamily}
+\postdate{
+\small 
+\sffamily}
+
+\newcommand{\affiliation}[1]{\date{#1}}
+\newcommand{\email}[1] {\href{mailto:#1}{#1}}
+  
+% how close is it to the top?
+\setlength{\droptitle}{-30pt}
+
+%hyperref is a very nasty package, be sure to load it last
+\usepackage{hyperref}
+\hypersetup{colorlinks = true, urlcolor=blue, filecolor=blue, citecolor = black,linkcolor=black}
